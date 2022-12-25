@@ -1,0 +1,8 @@
+github repo:
+https://github.com/Inabiel/karsajob-submission-nabil/tree/master/microservices-nabil-submission
+
+karsajobs package:
+https://github.com/users/Inabiel/packages/container/package/karsajobs
+
+karsajobs-ui package:
+https://github.com/users/Inabiel/packages/container/package/karsajobs-ui

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: karsajobs-ui
+  labels:
+    app: karsajobs
+    type: frontend
+spec:
+  selector:
+    matchLabels:
+      type: frontend
+  template:
+    metadata:
+      labels:
+        app: karsajobs
+        type: frontend
+    spec:
+      containers:
+        - name: karsajobs-ui
+          image: ghcr.io/inabiel/karsajobs-ui:latest
+          resources:
+            limits:
+              memory: "300Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 8000

@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: karsajobs-backend
+  labels:
+    app: karsajobs
+    type: backend
+spec:
+  selector:
+    matchLabels:
+      type: backend
+  template:
+    metadata:
+      labels:
+        app: karsajobs
+        type: backend
+    spec:
+      containers:
+        - name: karsajobs
+          image: ghcr.io/inabiel/karsajobs:latest
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 8080
+          env:
+            - name: APP_PORT
+              value: "8080"
+            - name: MONGO_HOST
+              value: mongo-service
+            - name: MONGO_USER
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-secret
+                  key: MONGO_ROOT_USERNAME
+            - name: MONGO_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-secret
+                  key: MONGO_ROOT_PASSWORD
