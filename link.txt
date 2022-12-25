@@ -1,5 +1,5 @@
 github repo:
-https://github.com/Inabiel/karsajob-submission-nabil/tree/master/microservices-nabil-submission
+https://github.com/Inabiel/karsajobs-submission-dicoding
 
 karsajobs package:
 https://github.com/users/Inabiel/packages/container/package/karsajobs
