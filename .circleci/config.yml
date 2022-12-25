@@ -22,8 +22,7 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - run: "pwd"
-      - run: "ls"
+      - run: "sh /backend/build_push_image_karsajobs.sh"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
