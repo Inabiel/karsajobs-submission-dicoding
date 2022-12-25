@@ -2,7 +2,7 @@
 docker build . -t ghcr.io/inabiel/karsajobs-ui:latest
 
 #exporting github personal access token (dont use this, please! :( )
-export CR_PAT=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
+export CR_PAT=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
 
 #cli login
 echo $CR_PAT | docker login ghcr.io -u inabiel --password-stdin
