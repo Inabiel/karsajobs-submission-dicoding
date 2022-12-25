@@ -31,15 +31,15 @@ jobs:
       - run: "cd backend && sh build_push_image_karsajobs.sh"
 
   build-fe-karsajobs:
-    docker:
-      - image: cimg/go:1.19.3
+    executor: docker
     steps:
       - checkout
       - setup_remote_docker
       - run: "cd frontend && sh build_push_image_karsajobs_ui.sh"
 
   test-be-app:
-    executor: docker
+    docker:
+      - image: cimg/go:1.19.3
     steps:
       - checkout
       - run: cd backend && go test -v -short --count=1 $(go list ./...)
