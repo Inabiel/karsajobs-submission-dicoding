@@ -36,7 +36,7 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - run: "cd frontend && sh build_push_image_karsajobs.sh"
+      - run: "cd frontend && sh build_push_image_karsajobs_ui.sh"
 
   test-be-app:
     executor: docker
@@ -48,6 +48,7 @@ workflows:
   backend:
     jobs:
       - lint-be-dockerfile
+      - test-be-app
       - build-be-karsajobs
   frontend:
     jobs:
